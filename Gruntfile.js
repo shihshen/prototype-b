@@ -134,6 +134,7 @@ module.exports = function (grunt) {
   grunt.loadTasks(depsPath + '/grunt-contrib-less/tasks');
   grunt.loadTasks(depsPath + '/grunt-contrib-coffee/tasks');
 
+  grunt.loadNpmTasks('grunt-ember-templates');
   grunt.loadNpmTasks('grunt-contrib-handlebars');
 
   // Project configuration.
@@ -161,6 +162,32 @@ module.exports = function (grunt) {
             expand: true,
             cwd: 'assets/linker/templates/',
             src: ['**/*.handlebars'],
+            dest: '.tmp/public/linker/templates/',
+            ext: '.js'
+          }
+        ]
+      }
+    },
+
+    emberTemplates: {
+      dev: {
+        options: {
+          amd: true,
+          templateName: function(sourceFile) {
+            return sourceFile.slice(sourceFile.lastIndexOf('/')+1);
+          }
+        },
+        files: [
+          {
+            expand: true,
+            cwd: 'assets/templates/',
+            src: ['**/*.hbs'],
+            dest: '.tmp/public/templates/',
+            ext: '.js'
+          }, {
+            expand: true,
+            cwd: 'assets/linker/templates/',
+            src: ['**/*.hbs'],
             dest: '.tmp/public/linker/templates/',
             ext: '.js'
           }
@@ -454,6 +481,7 @@ module.exports = function (grunt) {
     'jst:dev',
     'less:dev',
     'handlebars:dev',
+    'emberTemplates:dev',
     'copy:dev',
     'coffee:dev'
   ]);
@@ -485,6 +513,7 @@ module.exports = function (grunt) {
     'jst:dev',
     'less:dev',
     'handlebars:dev',
+    'emberTemplates:dev',
     'copy:dev',
     'coffee:dev',
     'concat',
