@@ -4,7 +4,7 @@ require.config({
     baseUrl: '/',
     paths: {
         'jquery': 'scripts/libs/jquery-1.10.2',
-        'ember': 'scripts/libs/ember.1.5.0',
+        'ember': 'scripts/libs/ember-1.5.0',
         'ember-data': 'scripts/libs/ember-data',
         'handlebars': 'scripts/libs/handlebars-1.1.2',
 
