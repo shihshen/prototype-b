@@ -135,46 +135,17 @@ module.exports = function (grunt) {
   grunt.loadTasks(depsPath + '/grunt-contrib-coffee/tasks');
 
   grunt.loadNpmTasks('grunt-ember-templates');
-  grunt.loadNpmTasks('grunt-contrib-handlebars');
 
   // Project configuration.
   grunt.initConfig({
     pkg: grunt.file.readJSON('package.json'),
-
-    handlebars: {
-      dev: {
-        options: {
-          amd: true,
-          processName: function(filePath) {
-            var subFilePath = filePath.substring(0, filePath.lastIndexOf('.handlebars'));
-            var parts = subFilePath.split('/');
-            return parts[parts.length - 1];
-          }
-        },
-        files: [
-          {
-            expand: true,
-            cwd: 'assets/templates/',
-            src: ['**/*.handlebars'],
-            dest: '.tmp/public/templates/',
-            ext: '.js'
-          }, {
-            expand: true,
-            cwd: 'assets/linker/templates/',
-            src: ['**/*.handlebars'],
-            dest: '.tmp/public/linker/templates/',
-            ext: '.js'
-          }
-        ]
-      }
-    },
 
     emberTemplates: {
       dev: {
         options: {
           amd: true,
           templateName: function(sourceFile) {
-            return sourceFile.slice(sourceFile.lastIndexOf('/')+1);
+            return sourceFile.slice(sourceFile.lastIndexOf('/') + 1);
           }
         },
         files: [
@@ -480,7 +451,6 @@ module.exports = function (grunt) {
     'clean:dev',
     'jst:dev',
     'less:dev',
-    'handlebars:dev',
     'emberTemplates:dev',
     'copy:dev',
     'coffee:dev'
@@ -512,7 +482,6 @@ module.exports = function (grunt) {
     'clean:dev',
     'jst:dev',
     'less:dev',
-    'handlebars:dev',
     'emberTemplates:dev',
     'copy:dev',
     'coffee:dev',
