@@ -145,7 +145,8 @@ module.exports = function (grunt) {
         options: {
           amd: true,
           templateName: function(sourceFile) {
-            return sourceFile.slice(sourceFile.lastIndexOf('/') + 1);
+            // Change template for ember default naming rule.
+            return sourceFile.slice(sourceFile.lastIndexOf('/') + 1).replace('_', '/');
           }
         },
         files: [

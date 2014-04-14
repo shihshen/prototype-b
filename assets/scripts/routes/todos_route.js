@@ -1,6 +1,7 @@
 define([
   'ember',
-  'scripts/todos_app'
+  'scripts/todos_app',
+  'templates/todos'
 ], function(Ember, Todos) {
 
   Todos.TodosRoute = Ember.Route.extend({
