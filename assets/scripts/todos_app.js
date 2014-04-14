@@ -1,10 +1,10 @@
 define([
-    'ember',
-    'ember-data'
+  'ember',
+  'ember-data'
 ], function(Ember, DS) {
-    var Todos = window.Todos = Ember.Application.create();
+  var Todos = window.Todos = Ember.Application.create();
 
-    Todos.ApplicationAdapter = DS.FixtureAdapter.extend();
+  Todos.ApplicationAdapter = DS.FixtureAdapter.extend();
 
-    return Todos;
+  return Todos;
 });

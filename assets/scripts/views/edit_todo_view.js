@@ -1,12 +1,12 @@
 define([
-    'ember',
-    'scripts/todos_app'
+  'ember',
+  'scripts/todos_app'
 ], function(Ember, Todos) {
-    Todos.EditTodoView = Ember.TextField.extend({
-        didInsertElement: function() {
-            this.$().focus();
-        }
-    });
+  Todos.EditTodoView = Ember.TextField.extend({
+    didInsertElement: function() {
+      this.$().focus();
+    }
+  });
 
-    Ember.Handlebars.helper('edit-todo', Todos.EditTodoView);
+  Ember.Handlebars.helper('edit-todo', Todos.EditTodoView);
 });
