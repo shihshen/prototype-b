@@ -3,10 +3,10 @@ require.config({
   //By default load any component from assets
   baseUrl: '/',
   paths: {
-    'jquery': 'scripts/libs/jquery-1.10.2',
-    'ember': 'scripts/libs/ember-1.5.0',
-    'ember-data': 'scripts/libs/ember-data',
-    'handlebars': 'scripts/libs/handlebars-1.1.2',
+    'jquery': 'scripts/libs/jquery-1.10.2.min',
+    'ember': 'scripts/libs/ember-1.5.0.min',
+    'ember-data': 'scripts/libs/ember-data-1.0.0-beta.5.min',
+    'handlebars': 'scripts/libs/handlebars.runtime-1.1.2',
 
     // Plugins
     'css': 'scripts/libs/css'
