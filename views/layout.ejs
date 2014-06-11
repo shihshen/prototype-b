@@ -33,6 +33,32 @@
       
     -->
 
+    <!--
+
+      Client-side Javascript
+      ========================
+
+      You can import any js files in your `assets` directory as you would 
+      normally: using <script></script> tags.
+
+      Here's an example of importing a few dependencies, in order:
+    -->
+    <!-- Bring in the socket.io client -->
+    <script type="text/javascript" src="/scripts/socket.io.js"></script>
+    <!-- then beef it up with some convenience logic for talking to Sails.js -->
+    <script type="text/javascript" src="/scripts/sails.io.js"></script>
+    <!-- listen on socket.io for incoming messages -->
+    <script type="text/javascript" src="/scripts/app.js"></script>
+
+    <!-- load JS and CSS by requirejs -->
+    <script>
+    var releaseVersion = '0.0.1',
+        require = {
+        urlArgs : 'v=' + releaseVersion
+    };
+    </script>
+    <script data-main="/scripts/main.js" src="/scripts/libs/require.js"></script>
+
   </head>
 
   <body>
@@ -69,32 +95,6 @@
       http://sailsjs.org/#!documentation/asset-management
 
     -->
-
-    <!--
-
-      Client-side Javascript
-      ========================
-
-      You can import any js files in your `assets` directory as you would 
-      normally: using <script></script> tags.
-
-      Here's an example of importing a few dependencies, in order:
-    -->
-    <!-- Bring in the socket.io client -->
-    <script type="text/javascript" src="/scripts/socket.io.js"></script>
-    <!-- then beef it up with some convenience logic for talking to Sails.js -->
-    <script type="text/javascript" src="/scripts/sails.io.js"></script>
-    <!-- listen on socket.io for incoming messages -->
-    <script type="text/javascript" src="/scripts/app.js"></script>
-
-    <!-- load JS and CSS by requirejs -->
-    <script>
-    var releaseVersion = '0.0.1',
-        require = {
-        urlArgs : 'v=' + releaseVersion
-    };
-    </script>
-    <script data-main="/scripts/main.js" src="/scripts/libs/require.js"></script>
 
   </body>
 </html>
