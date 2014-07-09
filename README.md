@@ -2,6 +2,6 @@
 ### Sailsjs + require.js + ember.js
 
 Note:
-* Please DO NOT fork this repo, just "cp -rf prototype-b/* dest/ && cp prototype-b/.gitignore dest/".
+* Just "cp -rf prototype-b/* dest/ && cp prototype-b/.gitignore dest/ && cp prototype-b/.bowerrc dest/".
 * npm i
 * node app.js
