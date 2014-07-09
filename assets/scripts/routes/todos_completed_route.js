@@ -1,8 +1,9 @@
-define([
-  'ember',
-  'scripts/todos_app',
-  'templates/todos_index'
-], function(Ember, Todos) {
+define(function(require, exports, module) {
+  'use strict';
+
+  var Ember = require('ember');
+  var Todos = require('scripts/todos_app');
+  require('templates/todos_index');
 
   Todos.TodosCompletedRoute = Ember.Route.extend({
     model: function() {

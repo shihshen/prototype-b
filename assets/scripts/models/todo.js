@@ -1,8 +1,10 @@
-define([
-  'ember',
-  'ember-data',
-  'scripts/todos_app'
-], function(Ember, DS, Todos) {
+define(function(require, exports, module) {
+  'use strict';
+  
+  var Ember = require('ember');
+  var DS = require('ember-data');
+  var Todos = require('scripts/todos_app');
+
   Todos.Todo = DS.Model.extend({
     title: DS.attr('string'),
     isCompleted: DS.attr('boolean')

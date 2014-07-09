@@ -1,7 +1,9 @@
-define([
-  'ember',
-  'scripts/todos_app'
-], function(Ember, Todos) {
+define(function(require, exports, module) {
+  'use strict';
+
+  require('ember');
+  var Todos = require('scripts/todos_app');
+
   Todos.Router.map(function() {
     this.resource('todos', {
       path: '/'

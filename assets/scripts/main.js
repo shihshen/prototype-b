@@ -1,7 +1,9 @@
-require(['./require.config'], function() {
+require(['config/require'], function() {
+  'use restrict';
+  // Wait for dom ready first to have better user experience.
   require(['jquery'], function($) {
     $(document).ready(function() {
-      // keep all necessary app, router, routes, models, views and  controllers here.
+      // Add more apps here according to your document.location.pathname
       require([
         'scripts/todos_app',
         'scripts/todos_router',

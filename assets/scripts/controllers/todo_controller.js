@@ -1,7 +1,9 @@
-define([
-  'ember',
-  'scripts/todos_app'
-], function(Ember, Todos) {
+define(function(require, exports, module) {
+  'use strict';
+
+  var Ember = require('ember');
+  var Todos = require('scripts/todos_app');
+  
   // It seems like this controller is not necessary for ember. But it is ok to write one.
   Todos.TodoController = Ember.ObjectController.extend({
 
